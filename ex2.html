@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{padding: 0; margin: 0;}
+        html,body{padding: 0;margin: 0; width: 100%;height: 100%;}
+        #button0{left:4px;}
+        #button1{left:139px;}
+        #button2{left:274px;}
+        #button3{left:409px;}
+        #button4{left:544px;}
+        #button5{left:679px;}
+        #button6{left:814px;}
+        #button7{left:949px;}
+        #button8{left:1084px;}
+        #button9{left:1219px;}
+        #section1_frame{position:relative;}
+        img{display:inline-block; border:0.01rem solid rgb(179, 178, 178);}
+        li{display:inline-block;position:absolute;z-index: 10;}
+        ul{position:absolute; left:139px}
+        #leftButton{position:absolute; left:123px; top:16px; height: 57.6px; width: 20.6px;}
+        #rightButton{position:absolute; left:683px; top:16px; height: 57.6px; width: 20.6px;}
+        ul,li{list-style: none;transition: all .5s;}
+        #frame{position:relative; left:150px;left:200px; top:200px}
+        #fence1{position:absolute;height: 57.6px; width: 125px;background-color: white;top:16px;left: 0px;z-index: 10  ;}
+        #fence2{position:absolute;height: 57.6px; width: 125px;background-color: white;top:16px;left:704px; z-index: 10;}
+        #button4,#button5,#button6,#button7,#button8,#button9{display:none;}
+        input{z-index: 10;}
+        .button:hover{border-bottom-width:2px;border-bottom-color: black;}
+        #big_img{position:absolute;left:323px; top:21px;}
+        #img0:hover + #big_img{src=""}
+        
+    </style>
+    <!-- src="https://image-comic.pstatic.net/webtoon/662774/thumbnail/thumbnail_IMAG02_31db4325-7914-41d8-9738-187487bad6cb.jpg" -->
+</head>
+<body>
+    <div id="section1_frame">
+       
+        <a><img id="big_img" style="width:579px" src="https://image-comic.pstatic.net/webtoon/662774/thumbnail/thumbnail_IMAG02_31db4325-7914-41d8-9738-187487bad6cb.jpg"></a>
+        
+        <div id=frame>
+            <div id=fence1></div>
+            <div id=fence2></div>
+            <input id="leftButton" type= "button" value="<" onclick="left_button()">
+            <ul id=img_list>
+                <li id=button0><a ><img class="button" id="img0" onmouseover="mouse_hover(0)" src="https://image-comic.pstatic.net/webtoon/758037/thumbnail/thumbnail_IMAG03_35b81904-c891-42dc-9a69-c059f08fea5a.jpg"></a></li>
+                <li id=button1><a ></a><img class="button" id="img1" onmouseover="mouse_hover(1)" src="https://image-comic.pstatic.net/webtoon/648419/thumbnail/thumbnail_IMAG03_accfe659-43f1-430e-92e6-9d19863d4de1.jpg"></li>
+                <li id=button2><a ></a><img class="button" id="img2" onmouseover="mouse_hover(2)" src="https://image-comic.pstatic.net/webtoon/602910/thumbnail/thumbnail_IMAG03_310386ce-e8fb-4ceb-b393-0b24e58691d6.jpg"></li>
+                <li id=button3><a ></a><img class="button" id="img3" onmouseover="mouse_hover(3)" src="https://image-comic.pstatic.net/webtoon/654774/thumbnail/thumbnail_IMAG03_01a52a12-b083-422b-a542-551d4cf93608.jpg"></li>
+                <li id=button4><a ></a><img class="button" id="img4" onmouseover="mouse_hover(4)" src="https://image-comic.pstatic.net/webtoon/728750/thumbnail/thumbnail_IMAG03_72640350-0835-474e-9e89-a80a75ae7a83.jpg"></li>
+                <li id=button5><a ></a><img class="button" id="img5" onmouseover="mouse_hover(5)" src="https://image-comic.pstatic.net/webtoon/749632/thumbnail/thumbnail_IMAG03_ba64934b-3eec-40cb-b05e-bb7c5427a6f6.jpg"></li>
+                <li id=button6><a ></a><img class="button" id="img6" onmouseover="mouse_hover(6)" src="https://image-comic.pstatic.net/webtoon/759940/thumbnail/thumbnail_IMAG03_620684f8-d29a-4eaa-b9a4-a137f44b08ba.jpg"></li>
+                <li id=button7><a ></a><img class="button" id="img7" onmouseover="mouse_hover(7)" src="https://image-comic.pstatic.net/webtoon/709731/thumbnail/thumbnail_IMAG03_6a190f77-7a83-4e3e-a0a9-e403097beccb.jpg"></li>
+                <li id=button8><a ></a><img class="button" id="img8" onmouseover="mouse_hover(8)" src="https://image-comic.pstatic.net/webtoon/768433/thumbnail/thumbnail_IMAG03_f998deab-08ce-4271-9846-e837d52ea2b5.jpg"></li>
+                <li id=button9><a ></a><img class="button" id="img9" onmouseover="mouse_hover(9)" src="https://image-comic.pstatic.net/webtoon/730174/thumbnail/thumbnail_IMAG03_193663b9-b6b7-4b8d-9e48-e7d95f470bcf.jpg"></li>
+            </ul>
+            <input id="rightButton" type= "button" value=">" onclick="right_button()">
+        </div>
+    </div>
+    
+    <script>
+        var slide_index=0;
+        var slide_index2=3;
+        var arr=new Array();
+        var arr1=new Array();
+        
+        var position=0;
+        var position2=135;
+        
+        var change_img=new Array();
+        change_img[0]='https://image-comic.pstatic.net/webtoon/662774/thumbnail/thumbnail_IMAG02_31db4325-7914-41d8-9738-187487bad6cb.jpg'
+        change_img[1]='https://image-comic.pstatic.net/webtoon/747269/thumbnail/thumbnail_IMAG02_848e7c39-bb83-44ad-8dfc-b77c565d98e6.jpg'
+        change_img[2]='https://image-comic.pstatic.net/webtoon/758662/thumbnail/thumbnail_IMAG02_1d5df5a8-bbf2-4c34-a360-180cf81176f3.jpg'
+        change_img[3]='https://image-comic.pstatic.net/webtoon/728015/thumbnail/thumbnail_IMAG03_dddd2588-5f1d-41f4-9ebb-85394e70a666.jpg'
+        change_img[4]='https://image-comic.pstatic.net/webtoon/626907/thumbnail/thumbnail_IMAG02_4112f2fc-66f3-40a0-9326-00728c6d9679.jpg'
+        change_img[5]='https://image-comic.pstatic.net/webtoon/701535/thumbnail/thumbnail_IMAG02_44ccf437-c468-4be8-bf9f-edab1b3aa313.jpg'
+        change_img[6]='https://image-comic.pstatic.net/webtoon/738694/thumbnail/thumbnail_IMAG02_e3016d9a-f49c-4d10-a496-d31e1e520687.jpg'
+        change_img[7]='https://image-comic.pstatic.net/webtoon/736744/thumbnail/thumbnail_IMAG02_e5afd67e-aee6-47d1-b0b8-c88a97a3a8a4.jpg'
+        change_img[8]='https://image-comic.pstatic.net/webtoon/749639/thumbnail/thumbnail_IMAG02_707c9e3c-0ca2-4ef2-b3b5-8105baaf4284.jpg'
+        change_img[9]='https://image-comic.pstatic.net/webtoon/760001/thumbnail/thumbnail_IMAG02_4603d2d0-d7d3-4b11-ba77-751bd2d7ed78.jpg'
+               
+        function left_button(){
+            for(var i=0; i<10; i++){
+                var str='button'+i;
+                arr[i]=document.getElementById(str);
+            }
+            if(slide_index==6){
+                console.log('2')
+                return;
+            }
+            else{
+            //arr[slide_index].style.display='none'
+            arr[slide_index].style.zlndex='-1'
+            arr[slide_index+4].style.display='inline-block'
+            //document.getElementById('img_list').style
+            position=position-135;
+            document.getElementById('img_list').style.transform='translate('+String(position)+'px,0px)';
+            if(slide_index-1>=0){arr[slide_index-1].style.display='none'}
+            //arr[slide_index].style.display='none'
+            
+            console.log('1')
+            slide_index++
+            slide_index2++
+            }
+            // for(var i=slide_index;i<slide_index+4;i++){
+            //     arr[i].style.display='none'
+            //     console.log('1')
+            //}
+        }
+
+        function right_button(){
+            for(var i=0; i<10; i++){
+                var str='button'+i;
+                arr[i]=document.getElementById(str);
+            }
+            if(slide_index2==3){
+                console.log(slide_index)
+                console.log(slide_index2)
+                console.log('2')
+                return;
+            }
+            else{
+            //arr[slide_index].style.display='none'
+            arr[slide_index2].style.zlndex='-1'
+            arr[slide_index2-4].style.display='inline-block'
+            //document.getElementById('img_list').style
+            position=position+135;
+            document.getElementById('img_list').style.transform='translate('+String(position)+'px,0px)';
+            if(slide_index2<=8){arr[slide_index2+1].style.display='none'}
+            //arr[slide_index].style.display='none'
+            
+            console.log('1')
+            if(slide_index!=0){
+            slide_index--;slide_index2--;}
+        }
+        }
+
+        function mouse_hover(tag_id){
+            console.log('hover')
+            console.log(change_img[tag_id])
+            document.getElementById('big_img').src=change_img[tag_id]
+            
+        }
+    </script>
+   
+</body>
+</html>

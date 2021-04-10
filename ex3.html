@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        #ad_section{position:relative; left:300px; top:300px}
+        #circle{width:40px; height: 40px; border-radius: 20px;z-index:20; background-color: white;}
+        #ad_section{position:relative; display:inline-block}
+        #circle{position:absolute; right:20px; top:20px; 
+        background-image: url(data:image/png;base64,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);
+          background-repeat: no-repeat;  background-size: cover; transition-delay: 2s;
+        }
+        #circle:hover{animation-name:change_color; animation-duration: 2s;}
+        @keyframes change_color{
+            from{border: 1px solid black; background-position:0px 20px;}
+            to{border:1px solid red; background-position:0px -5px;}
+        }
+        /* #circle:hover{animation-name:loading_motion; animation-duration: 1s; animation-iteration-count: 2;}
+        @keyframes loading_motion{
+            from{background-position:0px 20px;}
+            to{background-position:0px -5px;}
+        } */
+        span{position:absolute;bottom:-13px; left:5px;}
+        #slide_ad{display:inline-block; position:absolute; bottom:-350px;left:0;}
+        /* #slide_ad:hover{animation-name:slide_up; animation-duration: 2s;} */
+        @keyframes slide_up{
+            from{top:80px;left:0;}
+            to{bottom:0;left:0}
+        }
+    </style>
+</head>
+<body>
+    <div id="ad_section">
+        <img src="https://ssl.pstatic.net/tveta/libs/1330/1330355/f84ced065c0cf343b3ae_20210407193734545.jpg" alt="광고">
+        <a><div id="circle"  ><span style="font-size: 0.5rem; color:white">자세히</span></div>
+        </a>
+        <img id="slide_ad" src="https://ssl.pstatic.net/tveta/libs/1330/1330355/d49f4f2caedb4c11144e_20210407180542114.jpg">
+    </div>
+
+    <script>
+        function rest_time(){}
+        function slide_up(){
+            setTimeout(rest_time,2000)
+            var circle_id=document.getElementById('circle')
+            circle_id.style.animationName='slide_up'
+            circle_id.style.animationDuration='2s'
+        }
+    </script>
+</body>
+</html>

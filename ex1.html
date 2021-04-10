@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{padding: 0; margin: 0;}
+        /* #button1{background-image: url(https://image-comic.pstatic.net/webtoon/758037/thumbnail/thumbnail_IMAG03_35b81904-c891-42dc-9a69-c059f08fea5a.jpg);}    
+        #button2{background-image: url(https://image-comic.pstatic.net/webtoon/648419/thumbnail/thumbnail_IMAG03_accfe659-43f1-430e-92e6-9d19863d4de1.jpg);}
+        #button3{background-image: url(https://image-comic.pstatic.net/webtoon/602910/thumbnail/thumbnail_IMAG03_310386ce-e8fb-4ceb-b393-0b24e58691d6.jpg);}
+        #button4{background-image: url(https://image-comic.pstatic.net/webtoon/654774/thumbnail/thumbnail_IMAG03_01a52a12-b083-422b-a542-551d4cf93608.jpg);}
+        #button5{background-image: url(https://image-comic.pstatic.net/webtoon/728750/thumbnail/thumbnail_IMAG03_72640350-0835-474e-9e89-a80a75ae7a83.jpg);}
+        #button6{background-image: url(https://image-comic.pstatic.net/webtoon/749632/thumbnail/thumbnail_IMAG03_ba64934b-3eec-40cb-b05e-bb7c5427a6f6.jpg);}
+        #button7{background-image: url(https://image-comic.pstatic.net/webtoon/759940/thumbnail/thumbnail_IMAG03_620684f8-d29a-4eaa-b9a4-a137f44b08ba.jpg);}
+        #button8{background-image: url(https://image-comic.pstatic.net/webtoon/709731/thumbnail/thumbnail_IMAG03_6a190f77-7a83-4e3e-a0a9-e403097beccb.jpg);}
+        #button9{background-image: url(https://image-comic.pstatic.net/webtoon/768433/thumbnail/thumbnail_IMAG03_f998deab-08ce-4271-9846-e837d52ea2b5.jpg);}
+        #button10{background-image: url(https://image-comic.pstatic.net/webtoon/730174/thumbnail/thumbnail_IMAG03_193663b9-b6b7-4b8d-9e48-e7d95f470bcf.jpg);} */
+        html,body{padding: 0;margin: 0; width: 100%;height: 100%;}
+        #button0{left:4px;}
+        #button1{left:139px;}
+        #button2{left:274px;}
+        #button3{left:409px;}
+        #button4{left:544px;}
+        #button5{left:679px;}
+        #button6{left:814px;}
+        #button7{left:949px;}
+        #button8{left:1084px;}
+        #button9{left:1219px;}
+        img{display:inline-block; border:0.01rem solid rgb(179, 178, 178);}
+        li{display:inline-block;position:absolute;z-index: 10;}
+        ul{position:absolute; left:139px}
+        #leftButton{position:absolute; left:114px; top:16px; height: 57.6px; width: 30px;}
+        #rightButton{position:absolute; left:680px; top:16px; height: 57.6px; width: 30px;}
+        ul,li{list-style: none;transition: all .5s;}
+        #frame{position:relative; left:150px;left:200px; top:200px}
+        #fence1{position:absolute;height: 57.6px; width: 125px;background-color: white;top:16px;left: 0px;z-index: 10  ;}
+        #fence2{position:absolute;height: 57.6px; width: 125px;background-color: white;top:16px;left:704px; z-index: 10;}
+        #button4,#button5,#button6,#button7,#button8,#button9{display:none;}
+        input{z-index: 10;}
+        .button:hover{border-bottom-width:2px;border-bottom-color: black;}
+        
+        
+    </style>
+</head>
+<body>
+    <div id="section1_frame">
+        <div id=frame>
+            <div id=fence1></div>
+            <div id=fence2></div>
+            <input id="leftButton" type= "button" value="<" onclick="left_button()">
+            <ul id=img_list>
+                <li id=button0><a ><img class="button" src="https://image-comic.pstatic.net/webtoon/758037/thumbnail/thumbnail_IMAG03_35b81904-c891-42dc-9a69-c059f08fea5a.jpg"></a></li>
+                <li id=button1><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/648419/thumbnail/thumbnail_IMAG03_accfe659-43f1-430e-92e6-9d19863d4de1.jpg"></li>
+                <li id=button2><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/602910/thumbnail/thumbnail_IMAG03_310386ce-e8fb-4ceb-b393-0b24e58691d6.jpg"></li>
+                <li id=button3><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/654774/thumbnail/thumbnail_IMAG03_01a52a12-b083-422b-a542-551d4cf93608.jpg"></li>
+                <li id=button4><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/728750/thumbnail/thumbnail_IMAG03_72640350-0835-474e-9e89-a80a75ae7a83.jpg"></li>
+                <li id=button5><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/749632/thumbnail/thumbnail_IMAG03_ba64934b-3eec-40cb-b05e-bb7c5427a6f6.jpg"></li>
+                <li id=button6><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/759940/thumbnail/thumbnail_IMAG03_620684f8-d29a-4eaa-b9a4-a137f44b08ba.jpg"></li>
+                <li id=button7><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/709731/thumbnail/thumbnail_IMAG03_6a190f77-7a83-4e3e-a0a9-e403097beccb.jpg"></li>
+                <li id=button8><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/768433/thumbnail/thumbnail_IMAG03_f998deab-08ce-4271-9846-e837d52ea2b5.jpg"></li>
+                <li id=button9><a ></a><img class="button" src="https://image-comic.pstatic.net/webtoon/730174/thumbnail/thumbnail_IMAG03_193663b9-b6b7-4b8d-9e48-e7d95f470bcf.jpg"></li>
+            </ul>
+            <input id="rightButton" type= "button" value=">" onclick="right_button()">
+        </div>
+    </div>
+    
+    <script>
+        var slide_index=0;
+        var slide_index2=3;
+        var arr=new Array();
+        var arr1=new Array();
+        var position=0;
+        var position2=135;
+     
+        
+        function left_button(){
+            for(var i=0; i<10; i++){
+                var str='button'+i;
+                arr[i]=document.getElementById(str);
+            }
+            if(slide_index==6){
+                console.log('2')
+                return;
+            }
+            else{
+            //arr[slide_index].style.display='none'
+            arr[slide_index].style.zlndex='-1'
+            arr[slide_index+4].style.display='inline-block'
+            //document.getElementById('img_list').style
+            position=position-135;
+            document.getElementById('img_list').style.transform='translate('+String(position)+'px,0px)';
+            if(slide_index-1>=0){arr[slide_index-1].style.display='none'}
+            //arr[slide_index].style.display='none'
+            
+            console.log('1')
+            slide_index++
+            slide_index2++
+            }
+            // for(var i=slide_index;i<slide_index+4;i++){
+            //     arr[i].style.display='none'
+            //     console.log('1')
+            //}
+        }
+
+        function right_button(){
+            for(var i=0; i<10; i++){
+                var str='button'+i;
+                arr[i]=document.getElementById(str);
+            }
+            if(slide_index2==3){
+                console.log(slide_index)
+                console.log(slide_index2)
+                console.log('2')
+                return;
+            }
+            else{
+            //arr[slide_index].style.display='none'
+            arr[slide_index2].style.zlndex='-1'
+            arr[slide_index2-4].style.display='inline-block'
+            //document.getElementById('img_list').style
+            position=position+135;
+            document.getElementById('img_list').style.transform='translate('+String(position)+'px,0px)';
+            if(slide_index2<=8){arr[slide_index2+1].style.display='none'}
+            //arr[slide_index].style.display='none'
+            
+            console.log('1')
+            if(slide_index!=0){
+            slide_index--;slide_index2--;}
+        }
+            // for(var i=slide_index;i<slide_index+4;i++){
+            //     arr[i].style.display='none'
+            //     console.log('1')
+            //}
+        }
+
+    </script>
+   
+</body>
+</html>
